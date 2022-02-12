@@ -1,1 +1,0 @@
-git+https://git@github.com/yjg30737/pyqt-resource-helper.git@main
