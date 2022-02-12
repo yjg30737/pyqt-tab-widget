@@ -1,0 +1,10 @@
+QTabBar::close-button 
+{
+    image: url(ico/close.png);
+    icon-size: 12;
+    padding: 2px;
+}
+QTabBar::close-button:hover {
+    background-color: #EEE;
+    border-radius: 5px;
+}
