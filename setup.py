@@ -7,8 +7,6 @@ setup(
     author_email='yjg30737@gmail.com',
     license='MIT',
     packages=find_packages(),
-    package_data={'pyqt_common_tab_widget.style': ['tab_widget.css'],
-                  'pyqt_common_tab_widget.ico': ['close.png']},
     description='PyQt QTabWidget which is the most common type. '
                 'This has a lot of common feature such as close tab, close tabs to the left/right, '
                 'close other tabs and so on.',
