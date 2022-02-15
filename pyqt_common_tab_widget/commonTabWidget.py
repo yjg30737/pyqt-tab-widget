@@ -1,13 +1,18 @@
 from PyQt5.QtCore import Qt, QPoint
 from PyQt5.QtWidgets import QTabWidget, QAction, QMenu
-from pyqt_resource_helper import PyQtResourceHelper
 
 
 class CommonTabWidget(QTabWidget):
     def __init__(self):
         super().__init__()
         self.__context_menu_p = 0
+        self.__initLastRemovedTabInfo()
         self.__initUi()
+
+    def __initLastRemovedTabInfo(self):
+        self.__last_removed_tab_idx = []
+        self.__last_removed_tab_widget = []
+        self.__last_removed_tab_title = []
 
     def __initUi(self):
         self.setContextMenuPolicy(Qt.CustomContextMenu)
@@ -34,13 +39,26 @@ class CommonTabWidget(QTabWidget):
             closeTabToTheRightAction = QAction('Close Tabs to the Right')
             closeTabToTheRightAction.triggered.connect(self.closeTabToRight)
 
+            reopenClosedTabAction = QAction('Reopen Closed Tab')
+            reopenClosedTabAction.triggered.connect(self.reopenClosedTab)
+
             menu = QMenu(self)
             menu.addAction(closeTabAction)
             menu.addAction(closeAllTabAction)
             menu.addAction(closeOtherTabAction)
             menu.addAction(closeTabToTheLeftAction)
             menu.addAction(closeTabToTheRightAction)
+            menu.addAction(reopenClosedTabAction)
             menu.exec(self.mapToGlobal(p))
+
+    def removeTab(self, idx):
+        self.__saveLastRemovedTabInfo(idx)
+        return super(CommonTabWidget, self).removeTab(idx)
+
+    def __saveLastRemovedTabInfo(self, idx):
+        self.__last_removed_tab_idx.append(idx)
+        self.__last_removed_tab_widget.append(self.widget(idx))
+        self.__last_removed_tab_title.append(self.tabText(idx))
 
     def keyPressEvent(self, e):
         if e.modifiers() & Qt.AltModifier and e.key() == Qt.Key_Left:
@@ -87,3 +105,14 @@ class CommonTabWidget(QTabWidget):
         if isinstance(self.__context_menu_p, QPoint):
             tab_idx = self.tabBar().tabAt(self.__context_menu_p)
             self.__removeTabFromRightTo(tab_idx)
+
+    def reopenClosedTab(self):
+        # todo enable/disable action dynamically by existence of closed tab
+        if len(self.__last_removed_tab_idx) > 0:
+            for i in range(len(self.__last_removed_tab_idx)-1, -1, -1):
+                self.insertTab(self.__last_removed_tab_idx[i],
+                               self.__last_removed_tab_widget[i],
+                               self.__last_removed_tab_title[i])
+            self.setCurrentIndex(self.__last_removed_tab_idx[-1])
+            self.__initLastRemovedTabInfo()
+
