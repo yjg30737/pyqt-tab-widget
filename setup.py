@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 
 setup(
-    name='pyqt-common-tab-widget',
+    name='pyqt-tab-widget',
     version='0.0.1',
     author='Jung Gyu Yoon',
     author_email='yjg30737@gmail.com',
@@ -10,7 +10,7 @@ setup(
     description='PyQt QTabWidget which is the most common type. '
                 'This has a lot of common features such as close a tab, close tabs to the left/right, '
                 'close other tabs and so on.',
-    url='https://github.com/yjg30737/pyqt-common-tab-widget.git',
+    url='https://github.com/yjg30737/pyqt-tab-widget.git',
     install_requires=[
         'PyQt5>=5.8'
     ]
