@@ -2,7 +2,7 @@ from PyQt5.QtCore import Qt, QPoint
 from PyQt5.QtWidgets import QTabWidget, QAction, QMenu
 
 
-class CommonTabWidget(QTabWidget):
+class TabWidget(QTabWidget):
     def __init__(self):
         super().__init__()
         self.__context_menu_p = 0
@@ -53,7 +53,7 @@ class CommonTabWidget(QTabWidget):
 
     def removeTab(self, idx):
         self.__saveLastRemovedTabInfo(idx)
-        return super(CommonTabWidget, self).removeTab(idx)
+        return super(TabWidget, self).removeTab(idx)
 
     def __saveLastRemovedTabInfo(self, idx):
         self.__last_removed_tab_idx.append(idx)

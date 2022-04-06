@@ -21,33 +21,34 @@ PyQt ```QTabWidget``` which is the most common type (if you doubt it, see the 'f
 
 ## Example
 Code Sample
+
 ```python
 from PyQt5.QtWidgets import QApplication, QWidget, QMainWindow
-from pyqt_common_tab_widget import CommonTabWidget
+from pyqt_tab_widget import TabWidget
 
 
 class MainWindow(QMainWindow):
-    def __init__(self):
-        super().__init__()
-        self.__initUi()
+  def __init__(self):
+    super().__init__()
+    self.__initUi()
 
-    def __initUi(self):
-        tabWidget = CommonTabWidget()
-        tabWidget.addTab(QWidget(), 'A')
-        tabWidget.addTab(QWidget(), 'B')
-        tabWidget.addTab(QWidget(), 'C')
-        tabWidget.addTab(QWidget(), 'D')
-        tabWidget.addTab(QWidget(), 'E')
-        self.setCentralWidget(tabWidget)
+  def __initUi(self):
+    tabWidget = TabWidget()
+    tabWidget.addTab(QWidget(), 'A')
+    tabWidget.addTab(QWidget(), 'B')
+    tabWidget.addTab(QWidget(), 'C')
+    tabWidget.addTab(QWidget(), 'D')
+    tabWidget.addTab(QWidget(), 'E')
+    self.setCentralWidget(tabWidget)
 
 
 if __name__ == "__main__":
-    import sys
+  import sys
 
-    app = QApplication(sys.argv)
-    mainWindow = MainWindow()
-    mainWindow.show()
-    sys.exit(app.exec_())
+  app = QApplication(sys.argv)
+  mainWindow = MainWindow()
+  mainWindow.show()
+  sys.exit(app.exec_())
 ```
 
 Result
