@@ -14,6 +14,7 @@ setup(
                 'close other tabs and so on.',
     url='https://github.com/yjg30737/pyqt-tab-widget.git',
     install_requires=[
-        'PyQt5>=5.8'
+        'PyQt5>=5.8',
+        'pyqt-resource-helper @ git+https://git@github.com/yjg30737/pyqt-resource-helper.git@main'
     ]
 )

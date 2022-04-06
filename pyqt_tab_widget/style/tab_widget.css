@@ -1,6 +1,6 @@
 QTabBar::close-button 
 {
-    image: url(ico/close.png);
+    image: url(ico/close.svg);
     icon-size: 12;
     padding: 2px;
 }
