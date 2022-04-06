@@ -20,7 +20,6 @@ class TabWidget(QTabWidget):
         self.customContextMenuRequested.connect(self.__prepareMenu)
         self.setTabsClosable(True)
         self.tabCloseRequested.connect(self.removeTab)
-        PyQtResourceHelper.setStyleSheet([self], ['style/tab_widget.css'])
 
     def __prepareMenu(self, p):
         tab_idx = self.tabBar().tabAt(p)
