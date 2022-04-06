@@ -1,5 +1,6 @@
 from PyQt5.QtCore import Qt, QPoint
 from PyQt5.QtWidgets import QTabWidget, QAction, QMenu
+from pyqt_resource_helper import PyQtResourceHelper
 
 
 class TabWidget(QTabWidget):
@@ -19,6 +20,7 @@ class TabWidget(QTabWidget):
         self.customContextMenuRequested.connect(self.__prepareMenu)
         self.setTabsClosable(True)
         self.tabCloseRequested.connect(self.removeTab)
+        PyQtResourceHelper.setStyleSheet([self], ['style/tab_widget.css'])
 
     def __prepareMenu(self, p):
         tab_idx = self.tabBar().tabAt(p)
