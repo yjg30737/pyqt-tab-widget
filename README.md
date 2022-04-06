@@ -5,7 +5,7 @@ PyQt ```QTabWidget``` which is the most common type (if you doubt it, see the 'f
 * PyQt5 >= 5.8
 
 ## Setup
-```pip3 install git+https://github.com/yjg30737/pyqt-common-tab-widget.git --upgrade```
+```pip3 install git+https://github.com/yjg30737/pyqt-tab-widget.git --upgrade```
 
 ## Feature
 * List which is able to do with context menu
