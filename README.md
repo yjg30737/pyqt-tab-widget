@@ -14,6 +14,7 @@ PyQt ```QTabWidget``` which is the most common type (if you doubt it, see the 'f
   * close tabs to the right
   * close other tabs
   * close all tabs
+  * reopen closed tab
 * Alt+Left to change the current tab to the very left tab
 * Alt+Right to change the current tab to the very right tab
 * Ctrl+F4 to close current tab
