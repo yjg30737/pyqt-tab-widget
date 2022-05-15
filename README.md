@@ -1,11 +1,11 @@
 # pyqt-tab-widget
-PyQt ```QTabWidget``` which is the most common type (if you doubt it, see the 'feature' section below). This has a lot of common features such as close a tab, close tabs to the left/right, close other tabs and so on.
+PyQt QTabWidget which is the most common type (if you doubt it, see the 'feature' section below). This has a lot of common features such as close a tab, close tabs to the left/right, close other tabs and so on.
 
 ## Requirements
 * PyQt5 >= 5.8
 
 ## Setup
-```pip3 install git+https://github.com/yjg30737/pyqt-tab-widget.git --upgrade```
+`python -m pip install pyqt-tab-widget`
 
 ## Included Packages
 * <a href="https://github.com/yjg30737/pyqt-resource-helper.git">pyqt-resource-helper</a> - This is currently not being used.
