@@ -7,9 +7,6 @@ PyQt QTabWidget which is the most common type (if you doubt it, see the 'feature
 ## Setup
 `python -m pip install pyqt-tab-widget`
 
-## Included Packages
-* <a href="https://github.com/yjg30737/pyqt-resource-helper.git">pyqt-resource-helper</a> - This is currently not being used.
-
 ## Feature
 * List which is able to do with context menu
   * close a tab
