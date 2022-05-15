@@ -1,6 +1,5 @@
 from PyQt5.QtCore import Qt, QPoint
 from PyQt5.QtWidgets import QTabWidget, QAction, QMenu
-from pyqt_resource_helper import PyQtResourceHelper
 
 
 class TabWidget(QTabWidget):
